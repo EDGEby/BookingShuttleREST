@@ -1,9 +1,9 @@
 package by.edge.shuttle.service.impl;
 
-import by.edge.shuttle.dto.shuttle.ShuttleDTO;
-import by.edge.shuttle.entity.Shuttle;
 import by.edge.shuttle.exception.NotFoundException;
 import by.edge.shuttle.repository.ShuttleRepository;
+import by.edge.shuttle.dto.shuttle.ShuttleDTO;
+import by.edge.shuttle.entity.Shuttle;
 import by.edge.shuttle.mapper.ShuttleMapper;
 import by.edge.shuttle.service.ShuttleService;
 import lombok.RequiredArgsConstructor;

@@ -2,6 +2,7 @@ package by.edge.shuttle.controller;
 
 import by.edge.shuttle.dto.passenger.PassengerCreateRequest;
 import by.edge.shuttle.dto.passenger.PassengerResponse;
+import by.edge.shuttle.dto.passenger.PassengerUpdateRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,4 +25,8 @@ public interface PassengerController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deletePassenger(@PathVariable Long id);
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    PassengerResponse updatePassenger(@Valid @RequestBody PassengerUpdateRequest updateRequest);
 }

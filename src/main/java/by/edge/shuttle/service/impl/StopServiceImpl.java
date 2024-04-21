@@ -1,9 +1,9 @@
 package by.edge.shuttle.service.impl;
 
+import by.edge.shuttle.exception.NotFoundException;
+import by.edge.shuttle.repository.StopRepository;
 import by.edge.shuttle.dto.stop.StopDTO;
 import by.edge.shuttle.entity.Stop;
-import by.edge.shuttle.repository.StopRepository;
-import by.edge.shuttle.exception.NotFoundException;
 import by.edge.shuttle.mapper.StopMapper;
 import by.edge.shuttle.service.StopService;
 import lombok.RequiredArgsConstructor;

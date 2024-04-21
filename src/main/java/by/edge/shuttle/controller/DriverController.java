@@ -2,6 +2,9 @@ package by.edge.shuttle.controller;
 
 import by.edge.shuttle.dto.driver.DriverCreateRequest;
 import by.edge.shuttle.dto.driver.DriverResponse;
+import by.edge.shuttle.dto.driver.DriverUpdateRequest;
+import by.edge.shuttle.dto.passenger.PassengerResponse;
+import by.edge.shuttle.dto.passenger.PassengerUpdateRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,4 +27,8 @@ public interface DriverController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteDriver(@PathVariable Long id);
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    DriverResponse updateDriver(@Valid @RequestBody DriverUpdateRequest updateRequest);
 }

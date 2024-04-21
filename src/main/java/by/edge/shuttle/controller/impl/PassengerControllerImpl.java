@@ -1,8 +1,9 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.PassengerController;
 import by.edge.shuttle.dto.passenger.PassengerCreateRequest;
 import by.edge.shuttle.dto.passenger.PassengerResponse;
-import by.edge.shuttle.controller.PassengerController;
+import by.edge.shuttle.dto.passenger.PassengerUpdateRequest;
 import by.edge.shuttle.mapper.PassengerMapper;
 import by.edge.shuttle.service.PassengerService;
 import lombok.RequiredArgsConstructor;
@@ -37,5 +38,10 @@ public class PassengerControllerImpl implements PassengerController {
     @Override
     public void deletePassenger(Long id) {
         passengerService.deletePassenger(id);
+    }
+
+    @Override
+    public PassengerResponse updatePassenger(PassengerUpdateRequest updateRequest) {
+        return mapper.toResponse(passengerService.updatePassenger(mapper.toDto(updateRequest)));
     }
 }

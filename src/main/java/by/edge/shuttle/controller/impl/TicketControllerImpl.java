@@ -1,19 +1,21 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.TicketController;
 import by.edge.shuttle.dto.ticket.TicketCreateRequest;
 import by.edge.shuttle.dto.ticket.TicketDTO;
 import by.edge.shuttle.dto.ticket.TicketResponse;
 import by.edge.shuttle.entity.Passenger;
 import by.edge.shuttle.entity.Shuttle;
 import by.edge.shuttle.entity.Stop;
-import by.edge.shuttle.controller.TicketController;
 import by.edge.shuttle.mapper.TicketMapper;
 import by.edge.shuttle.service.PassengerService;
 import by.edge.shuttle.service.ShuttleService;
 import by.edge.shuttle.service.StopService;
 import by.edge.shuttle.service.TicketService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class TicketControllerImpl implements TicketController {
     private final PassengerService passengerService;
     private final TicketMapper mapper;
 
-    @GetMapping
+    @Override
     public List<TicketResponse> getAllTickets() {
         return ticketService.getAllTickets()
                 .stream()
@@ -34,13 +36,13 @@ public class TicketControllerImpl implements TicketController {
                 .toList();
     }
 
-    @GetMapping("/{id}")
+    @Override
     public TicketResponse getTicketById(@PathVariable Long id) {
 
         return mapper.toResponse(ticketService.getTicketById(id));
     }
 
-    @PostMapping
+    @Override
     public TicketResponse addTicket(@RequestBody TicketCreateRequest createRequest) {
         Passenger passenger = passengerService.getPassengerById(createRequest.getPassengerId());
         Shuttle shuttle = shuttleService.getShuttleById(createRequest.getShuttleId());
@@ -50,7 +52,7 @@ public class TicketControllerImpl implements TicketController {
         return mapper.toResponse(ticketService.saveTicket(ticketDto));
     }
 
-    @DeleteMapping("/{id}")
+    @Override
     public void deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
     }

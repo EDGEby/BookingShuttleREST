@@ -13,4 +13,6 @@ public interface PassengerService {
     Passenger savePassenger(PassengerDTO passenger);
 
     void deletePassenger(Long id);
+
+    Passenger updatePassenger(PassengerDTO passenger);
 }

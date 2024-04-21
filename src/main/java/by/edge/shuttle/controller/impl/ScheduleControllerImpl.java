@@ -1,9 +1,9 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.ScheduleController;
 import by.edge.shuttle.dto.schedule.ScheduleCreateRequest;
 import by.edge.shuttle.dto.schedule.ScheduleDTO;
 import by.edge.shuttle.dto.schedule.ScheduleResponse;
-import by.edge.shuttle.controller.ScheduleController;
 import by.edge.shuttle.entity.Route;
 import by.edge.shuttle.mapper.ScheduleMapper;
 import by.edge.shuttle.service.RouteService;

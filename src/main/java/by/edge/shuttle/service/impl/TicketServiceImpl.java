@@ -1,9 +1,9 @@
 package by.edge.shuttle.service.impl;
 
-import by.edge.shuttle.dto.ticket.TicketDTO;
-import by.edge.shuttle.repository.TicketRepository;
-import by.edge.shuttle.entity.Ticket;
 import by.edge.shuttle.exception.NotFoundException;
+import by.edge.shuttle.repository.TicketRepository;
+import by.edge.shuttle.dto.ticket.TicketDTO;
+import by.edge.shuttle.entity.Ticket;
 import by.edge.shuttle.mapper.TicketMapper;
 import by.edge.shuttle.service.TicketService;
 import lombok.RequiredArgsConstructor;

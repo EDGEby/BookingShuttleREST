@@ -1,10 +1,10 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.RouteController;
 import by.edge.shuttle.dto.route.RouteCreateRequest;
 import by.edge.shuttle.dto.route.RouteDTO;
 import by.edge.shuttle.dto.route.RouteResponse;
 import by.edge.shuttle.entity.Driver;
-import by.edge.shuttle.controller.RouteController;
 import by.edge.shuttle.mapper.RouteMapper;
 import by.edge.shuttle.service.DriverService;
 import by.edge.shuttle.service.RouteService;

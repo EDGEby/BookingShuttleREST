@@ -21,7 +21,7 @@ public class Driver {
     @Column(unique = true, nullable = false, length = 50)
     private String email;
 
-    @Column(unique = true, nullable = false, length = 30)
+    @Column( nullable = false, length = 30)
     private String phone;
 
 }

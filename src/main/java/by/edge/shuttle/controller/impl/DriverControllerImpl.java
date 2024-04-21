@@ -1,8 +1,11 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.DriverController;
 import by.edge.shuttle.dto.driver.DriverCreateRequest;
 import by.edge.shuttle.dto.driver.DriverResponse;
-import by.edge.shuttle.controller.DriverController;
+import by.edge.shuttle.dto.driver.DriverUpdateRequest;
+import by.edge.shuttle.dto.passenger.PassengerResponse;
+import by.edge.shuttle.dto.passenger.PassengerUpdateRequest;
 import by.edge.shuttle.mapper.DriverMapper;
 import by.edge.shuttle.service.DriverService;
 import lombok.RequiredArgsConstructor;
@@ -37,5 +40,9 @@ public class DriverControllerImpl implements DriverController {
     @Override
     public void deleteDriver(Long id) {
         driverService.deleteDriver(id);
+    }
+    @Override
+    public DriverResponse updateDriver(DriverUpdateRequest updateRequest) {
+        return mapper.toResponse(driverService.updateDriver(mapper.toDto(updateRequest)));
     }
 }

@@ -1,10 +1,10 @@
 package by.edge.shuttle.service.impl;
 
-import by.edge.shuttle.dto.schedule.ScheduleDTO;
-import by.edge.shuttle.repository.ScheduleRepository;
-import by.edge.shuttle.entity.Schedule;
 import by.edge.shuttle.exception.NotFoundException;
 import by.edge.shuttle.mapper.ScheduleMapper;
+import by.edge.shuttle.repository.ScheduleRepository;
+import by.edge.shuttle.dto.schedule.ScheduleDTO;
+import by.edge.shuttle.entity.Schedule;
 import by.edge.shuttle.service.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,9 +1,9 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.StopController;
 import by.edge.shuttle.dto.stop.StopCreateRequest;
 import by.edge.shuttle.dto.stop.StopDTO;
 import by.edge.shuttle.dto.stop.StopResponse;
-import by.edge.shuttle.controller.StopController;
 import by.edge.shuttle.entity.Route;
 import by.edge.shuttle.mapper.StopMapper;
 import by.edge.shuttle.service.RouteService;

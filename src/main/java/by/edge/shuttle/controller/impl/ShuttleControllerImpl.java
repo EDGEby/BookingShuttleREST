@@ -1,8 +1,8 @@
 package by.edge.shuttle.controller.impl;
 
+import by.edge.shuttle.controller.ShuttleController;
 import by.edge.shuttle.dto.shuttle.ShuttleCreateRequest;
 import by.edge.shuttle.dto.shuttle.ShuttleResponse;
-import by.edge.shuttle.controller.ShuttleController;
 import by.edge.shuttle.mapper.ShuttleMapper;
 import by.edge.shuttle.service.ShuttleService;
 import lombok.RequiredArgsConstructor;

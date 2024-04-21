@@ -1,9 +1,11 @@
 package by.edge.shuttle.service.impl;
 
-import by.edge.shuttle.dto.driver.DriverDTO;
-import by.edge.shuttle.entity.Driver;
+import by.edge.shuttle.dto.passenger.PassengerDTO;
+import by.edge.shuttle.entity.Passenger;
 import by.edge.shuttle.exception.NotFoundException;
 import by.edge.shuttle.repository.DriverRepository;
+import by.edge.shuttle.dto.driver.DriverDTO;
+import by.edge.shuttle.entity.Driver;
 import by.edge.shuttle.mapper.DriverMapper;
 import by.edge.shuttle.service.DriverService;
 import lombok.RequiredArgsConstructor;
@@ -39,5 +41,15 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public void deleteDriver(Long id) {
         driverRepository.deleteById(id);
+    }
+
+    @Override
+    public Driver updateDriver(DriverDTO driver) {
+        var existedDriver = driverRepository.findByEmail(driver.getEmail());
+        var updatedDriver = mapper.toEntity(driver);
+        if (existedDriver != null ) {
+            updatedDriver.setId(existedDriver.getId());
+        }
+        return driverRepository.save(updatedDriver);
     }
 }

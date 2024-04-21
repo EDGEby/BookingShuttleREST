@@ -1,9 +1,9 @@
 package by.edge.shuttle.service.impl;
 
+import by.edge.shuttle.exception.NotFoundException;
+import by.edge.shuttle.repository.PassengerRepository;
 import by.edge.shuttle.dto.passenger.PassengerDTO;
 import by.edge.shuttle.entity.Passenger;
-import by.edge.shuttle.repository.PassengerRepository;
-import by.edge.shuttle.exception.NotFoundException;
 import by.edge.shuttle.mapper.PassengerMapper;
 import by.edge.shuttle.service.PassengerService;
 import lombok.RequiredArgsConstructor;
@@ -40,5 +40,15 @@ public class PassengerServiceImpl implements PassengerService {
     @Override
     public void deletePassenger(Long id) {
         passengerRepository.deleteById(id);
+    }
+
+    @Override
+    public Passenger updatePassenger(PassengerDTO passenger) {
+        var existedPassenger = passengerRepository.findByEmail(passenger.getEmail());
+        var updatedPassenger = mapper.toEntity(passenger);
+        if (existedPassenger != null ) {
+            updatedPassenger.setId(existedPassenger.getId());
+        }
+        return passengerRepository.save(updatedPassenger);
     }
 }
