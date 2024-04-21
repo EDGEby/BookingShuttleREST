@@ -21,3 +21,4 @@
 
 - Java Development Kit (JDK) версии 17
 - Docker (для запуска РСУБД PostgreSQL)
+- папку (mvn/wrapper) добавить "." в названии
