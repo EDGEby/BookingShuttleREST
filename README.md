@@ -19,7 +19,5 @@
 ![img.png](diagram/db_diagram.png)
 ## Требования
 
-Перед началом работы убедитесь, что у вас установлены следующие компоненты:
-
 - Java Development Kit (JDK) версии 17
-
+- Docker (для запуска РСУБД PostgreSQL)
