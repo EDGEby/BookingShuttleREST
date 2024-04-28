@@ -1,4 +1,4 @@
-# Shuttle REST API
+# BookingShuttle REST API
 
 ## Описание предметной области
 
